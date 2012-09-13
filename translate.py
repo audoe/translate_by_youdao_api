@@ -5,9 +5,8 @@ from optparse import OptionParser
 import ConfigParser
 import chardet
 
-#有道的key，要从http://fanyi.youdao.com/openapi?path=data-mode上申请
-
 def youdao_api(type='json'):
+    #读配置文件
     cf = ConfigParser.ConfigParser()
     cf.read('youdao.conf')
     key = cf.get('youdao','key')
@@ -24,11 +23,26 @@ def translate(key_world):
 
 def print_resault(resault):
     print 'keyword:%s'%(resault['query'])
-    if resault.get('basic',''):
-        basic = resault.get('basic')
-        print ','.join(basic['explains'])
+    translation = resault.get('translation',[])
+    basic = resault.get('basic',[])
+    if translation and basic:
+        print '基本解释:'
+        print '\n'.join(translation)
+        print '\n'.join(basic['explains'])
     else:
-        print "没有这个单词的解释。请检查你的输入。"
+        print '在有道词典中没有这个单词的基本解释。'
+
+    web = resault.get('web',[])
+    if web:
+        print '在有道的搜索中，有与你输入关键字相似或相同的解释。'
+        for key_dict in web:
+            #codeing
+            key =key_dict['key']
+            value = ','.join(key_dict['value'])
+            print u'keywork:%s\n解释:%s'%(key,value)
+    else:
+        print '在有道的网络中没有这个单词的解释'
+
 
 if __name__ == '__main__':
     perser = OptionParser()
