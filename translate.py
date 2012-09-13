@@ -8,7 +8,7 @@ import chardet
 def youdao_api(type='json'):
     #读配置文件
     cf = ConfigParser.ConfigParser()
-    cf.read('youdao.conf')
+    cf.read('config/youdao.conf')
     key = cf.get('youdao','key')
     keyfrom = cf.get('youdao','key_from')
     if key and keyfrom:
