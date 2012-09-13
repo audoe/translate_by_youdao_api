@@ -24,8 +24,8 @@
 有什么想法？
 欢迎与我联系
 
-- twitter: [@audoe] ('http://twitter.com/audoe' , audoe)
-- weibo:  [@audoe] ('http://weibo.com/audoe' , audoe)
+- twitter: [@audoe] (http://twitter.com/audoe "audoe")
+- weibo:  [@audoe] (http://weibo.com/audoe "audoe")
 - email: whchen1080@gmail.com
 
 
