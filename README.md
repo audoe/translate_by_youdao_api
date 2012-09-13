@@ -7,9 +7,11 @@
 在有道的 [API申请页] (http://fanyi.youdao.com/openapi?path=data-mode "申请页面")
 ,申请一个key，相关的内容写入到 **youdao.conf** 这个文件里。
 
+在你的终端下使用:
 
-    python translation.py -k word //work 可以是中文或者英文，有道会判断相应的逻辑
-
+```python
+python translation.py -k word //work 可以是中文或者英文，有道会判断相应的逻辑
+```
 
 ###开发计划
 
