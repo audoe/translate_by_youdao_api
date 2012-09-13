@@ -30,4 +30,7 @@ python translation.py -k word //work 可以是中文或者英文，有道会判�
 - email: whchen1080@gmail.com
 
 
+###坑爹的想法
 
+坑爹？加一个语音输入的模块算吗？
+如果你有什么坑爹的想法，同样也欢迎联系我
